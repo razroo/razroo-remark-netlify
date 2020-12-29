@@ -5,12 +5,12 @@
 ## Usage
 
 ```sh
-yarn add --dev remark-embedded-code-snippets
+yarn add --dev @razroo/razroo-remark-embed-code
 ```
 
 ```javascript
 import remark from 'remark';
-import embeddedCodeSnippets from 'remark-embedded-code-snippets';
+import embeddedCodeSnippets from '@razroo/razroo-remark-embed-code';
 import report from 'vfile-reporter';
 
 remark()

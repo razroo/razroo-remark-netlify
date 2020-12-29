@@ -1,7 +1,7 @@
 {
-  "name": "remark-embedded-code-snippets",
+  "name": "@razroo/razroo-remark-embed-code",
   "description": "Razroo Remark plugin for embedding code snippets from github permalinks.",
-  "version": "2.0.0",
+  "version": "1.0.1",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "types",
@@ -23,6 +23,7 @@
     "release": "web-scripts release",
     "prepare": "web-scripts audit"
   },
+  "license": "MIT",
   "husky": {
     "hooks": {
       "commit-msg": "web-scripts commitmsg",
