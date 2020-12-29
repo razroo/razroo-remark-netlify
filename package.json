@@ -1,0 +1,47 @@
+{
+  "name": "remark-embedded-code-snippets",
+  "description": "Razroo Remark plugin for embedding code snippets from github permalinks.",
+  "version": "2.0.0",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "types": "types",
+  "files": [
+    "cjs",
+    "esm",
+    "types"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/razroo"
+  },
+  "scripts": {
+    "lint": "web-scripts lint",
+    "test": "web-scripts test --ci",
+    "prebuild": "rm -rf cjs esm types",
+    "build": "web-scripts build",
+    "commit": "web-scripts commit",
+    "prerelease": "yarn build && yarn test",
+    "release": "web-scripts release",
+    "prepare": "web-scripts audit"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "web-scripts commitmsg",
+      "pre-commit": "web-scripts precommit"
+    }
+  },
+  "devDependencies": {
+    "@jomaxx/jest-polly": "^1.0.1",
+    "@spotify/web-scripts": "^6.1.0",
+    "@types/lodash.memoize": "^4.1.6",
+    "@types/node-fetch": "^2.5.5",
+    "husky": "^4.0.0",
+    "remark": "^11.0.2"
+  },
+  "dependencies": {
+    "lodash.memoize": "^4.1.2",
+    "node-fetch": "^2.6.0",
+    "unist-util-visit": "^2.0.2"
+  },
+  "author": "Charlie Greenman <charlie@razroo.com>",
+  "repository": "git@github.com:razroo/razroo-remark-embed-code.git"
+}
