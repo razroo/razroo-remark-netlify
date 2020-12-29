@@ -4,7 +4,7 @@ export function matchPermalink(
   href: string,
   { github }: Context,
 ): Match | null {
-  const pattern = `^${github}/([^/]+)/([^/]+)/blob/([0-9a-f]{40})/([^#]+)#L([0-9]+)(-L([0-9]+))?$`;
+  const pattern = `^${github}/([^/]+)/([^/]+)/blob/([^/]+)/([^#]+)#L([0-9]+)(-L([0-9]+))?$`;
   const regex = new RegExp(pattern);
   const match = href.match(regex);
   if (!match) return null;
