@@ -1,5 +1,5 @@
 {
-  "name": "@razroo/razroo-remark-embed-code",
+  "name": "@razroo/razroo-remark-netlify",
   "description": "Razroo Remark plugin for embedding code snippets from github permalinks.",
   "version": "1.0.1",
   "main": "cjs/index.js",
