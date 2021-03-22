@@ -4,7 +4,7 @@ import { createApi } from './github';
 import { matchPermalink } from './matchPermalink';
 import { Context } from './types';
 
-export function githubPermalinksPlugin({
+export function netlifyPlugin({
   github = 'https://github.com',
   githubApi = 'https://api.github.com',
   username = '',
