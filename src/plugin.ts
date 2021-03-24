@@ -35,7 +35,7 @@ export function netlifyPlugin({
 
       promises.push(
         (async () => {
-          const match = matchPermalink(image.url, context);
+          const match = matchPermalink(context);
 
           if (match) {
             parent.children.splice(parent.children.indexOf(paragraph), 1, {
@@ -51,3 +51,4 @@ export function netlifyPlugin({
     await Promise.all(promises);
   };
 }
+netlifyPlugin()

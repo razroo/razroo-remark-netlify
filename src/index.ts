@@ -1,1 +1,1 @@
-export { githubPermalinksPlugin as default } from './plugin';
+export { netlifyPlugin as default } from './plugin';
