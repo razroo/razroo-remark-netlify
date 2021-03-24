@@ -1,1 +1,1 @@
-export { netlifyPlugin as default } from './plugin';
+export {removeTitleTags as default} from "./removeTitleTags";
