@@ -1,7 +1,7 @@
 {
   "name": "@razroo/razroo-remark-netlify",
   "description": "Razroo Remark Netlify plugin",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "types",
