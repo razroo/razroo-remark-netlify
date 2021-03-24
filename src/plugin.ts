@@ -14,13 +14,12 @@ export function githubPermalinksPlugin({}) {
 
       promises.push(
         (async () => {
-          const match = removeTitleTags(context);
+          const match = removeTitleTags(paragraph);
 
           if (match) {
             parent.children.splice(parent.children.indexOf(paragraph), 1, {
-              type: 'code',
-              lang: image.title || extname(match.path).slice(1),
-              value: await getSnippet(match),
+              type: 'paragraph',
+              value: await removeTitleTags(match),
             });
           }
         })(),
