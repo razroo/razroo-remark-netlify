@@ -1,4 +1,6 @@
 const fs = require('fs')
+const unified = require('unified')
+const markdown =require('remark-parse')
 
 export function removeTitleTags(text: any
 ): any {
@@ -7,6 +9,7 @@ export function removeTitleTags(text: any
     const match = text.match(regex);
 
     let modifiedFile
+    let fileASV
 
     if (match) {
         let titleText = match.toString()
@@ -16,13 +19,15 @@ export function removeTitleTags(text: any
             let newTitleText = '# ' + arrayOfTitleText[1];
             modifiedFile = text.replace(titleText, newTitleText);
 
-            fs.writeFile('~test.txt', modifiedFile, {flag: 'a+'}, (err: any) => {
+            /*fs.writeFile('~test.txt', modifiedFile, {flag: 'a+'}, (err: any) => {
                 if (err) {
                     console.error(err)
                     return
                 }
                 //file written successfully
             })
+            */
+
 
 
         }
@@ -30,7 +35,11 @@ export function removeTitleTags(text: any
     }
 
 
-    return modifiedFile;
+    //console.log(fileASV)
+
+
+
+    return match;
 }
 
 

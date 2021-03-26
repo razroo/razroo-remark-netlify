@@ -1,8 +1,8 @@
 import visit from 'unist-util-visit';
 import {removeTitleTags} from "./removeTitleTags";
-import {extname} from "path";
 
-export function githubPermalinksPlugin({}) {
+
+export function removeTitleTagsPlugin({}) {
 
   return async function transformer(tree: any) {
     const promises: Promise<any>[] = [];
@@ -16,10 +16,11 @@ export function githubPermalinksPlugin({}) {
         (async () => {
           const match = removeTitleTags(paragraph);
 
+
           if (match) {
             parent.children.splice(parent.children.indexOf(paragraph), 1, {
               type: 'paragraph',
-              value: await removeTitleTags(match),
+              value: tex.replace(titleText, replaceTitleTags(match,tree));
             });
           }
         })(),
@@ -28,4 +29,18 @@ export function githubPermalinksPlugin({}) {
 
     await Promise.all(promises);
   };
+}
+
+function replaceTitleTags(match,text) {
+  let titleText = match.toString()
+  let newTitleText
+  let modifiedFile
+  const arrayOfTitleText = titleText.match(/title:(.*)/);
+  if (arrayOfTitleText) {
+    console.log("trying new regex:" + arrayOfTitleText[1]);
+    let newTitleText = '# ' + arrayOfTitleText[1];
+    modifiedFile = text.replace(titleText, newTitleText);
+
+  }
+  return newTitleText
 }
