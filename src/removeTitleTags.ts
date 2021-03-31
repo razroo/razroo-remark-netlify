@@ -1,7 +1,3 @@
-const fs = require('fs')
-const unified = require('unified')
-const markdown =require('remark-parse')
-
 export function matchNetlifyTitleTag(text: string): any {
   const regex = /---\s*title.*\s*---/mi
   const match = text.match(regex);

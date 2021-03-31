@@ -2,7 +2,7 @@ import visit from 'unist-util-visit';
 import {matchNetlifyTitleTag, transformTitleTags} from "./removeTitleTags";
 
 
-export function removeTitleTagsPlugin({}) {
+export function removeTitleTagsPlugin() {
 
   return async function transformer(tree: any) {
     const promises: Promise<any>[] = [];
@@ -15,7 +15,6 @@ export function removeTitleTagsPlugin({}) {
       promises.push(
         (async () => {
           const match = matchNetlifyTitleTag(paragraph);
-
 
           if (match) {
             parent.children.splice(parent.children.indexOf(paragraph), 1, {
