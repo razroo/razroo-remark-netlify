@@ -1,1 +1,1 @@
-export {removeTitleTags as default} from "./removeTitleTags";
+export {removeTitleTagsPlugin as default} from "./plugin";
