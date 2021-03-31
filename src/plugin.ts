@@ -19,7 +19,7 @@ export function removeTitleTagsPlugin() {
           if (match) {
             parent.children.splice(parent.children.indexOf(paragraph), 1, {
               type: 'paragraph',
-              value: transformTitleTags(match);
+              value: transformTitleTags(match)
             });
           }
         })(),
