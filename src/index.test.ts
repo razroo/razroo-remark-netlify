@@ -11,18 +11,13 @@ title: Introduction
 Random text goes here
 `;
 
-test('Should match and replace netlify text', async () => {
+test('Should transform netlify text', async () => {
   const sampleText = `
     ---
     title: Introduction
     ---
-
-    This is the text after the introduction.
   `;
-
-  // let match = matchNetlifyTitleTag(sampleText);
-  // console.log('match');
-  // console.log(match);
+  
   let expected = transformTitleTags(sampleText);
 
   expect(expected).toMatchInlineSnapshot(`"#  Introduction"`);
