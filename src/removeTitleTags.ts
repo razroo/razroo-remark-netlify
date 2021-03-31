@@ -2,11 +2,17 @@ const fs = require('fs')
 const unified = require('unified')
 const markdown =require('remark-parse')
 
-export function matchNetlifyTitleTag(text: any): any {
+export function matchNetlifyTitleTag(text: string): any {
   const regex = /---\s*title.*\s*---/mi
   const match = text.match(regex);
 
   return match;
+}
+
+export function transformTitleTags(titleText: string) {
+  const arrayOfTitleText = titleText.match(/title:(.*)/);
+
+  return '# ' + arrayOfTitleText[1];
 }
 
 export function removeTitleTags(text: any
