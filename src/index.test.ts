@@ -23,7 +23,12 @@ test('Should match and replace netlify text', async () => {
   let match = matchNetlifyTitleTag(sampleText);
   let expected = transformTitleTags(match);
 
+  expect(expected).toMatchInlineSnapshot(`
+    "# Introduction
 
+    This is the text after the introduction.
+    "
+  `);
 });
 
 test('Should replace netlify title tag with markdown equivalent one, using remark', async () => {
