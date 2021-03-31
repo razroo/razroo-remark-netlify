@@ -17,13 +17,13 @@ test('Should transform netlify text', async () => {
     title: Introduction
     ---
   `;
-  
+
   let expected = transformTitleTags(sampleText);
 
   expect(expected).toMatchInlineSnapshot(`"#  Introduction"`);
 });
 
-xtest('Should replace netlify title tag with markdown equivalent one, using remark', async () => {
+test('Should replace netlify title tag with markdown equivalent one, using remark', async () => {
   const result = await run(markdown);
 
   expect(result).toMatchInlineSnapshot(`

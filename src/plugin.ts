@@ -7,18 +7,18 @@ export function removeTitleTagsPlugin() {
   return async function transformer(tree: any) {
     const promises: Promise<any>[] = [];
 
-    visit(tree, 'header', (paragraph: any, _, parent: any) => {
-      if (paragraph.children.length !== 1) {
+    visit(tree, 'header', (header: any, _, parent: any) => {
+      if (header.children.length !== 1) {
         return;
       }
 
       promises.push(
         (async () => {
-          const match = matchNetlifyTitleTag(paragraph);
+          const match = matchNetlifyTitleTag(header);
 
           if (match) {
-            parent.children.splice(parent.children.indexOf(paragraph), 1, {
-              type: 'paragraph',
+            parent.children.splice(parent.children.indexOf(header), 1, {
+              type: 'header',
               value: transformTitleTags(match)
             });
           }
