@@ -10,7 +10,7 @@ title: Introduction
 Random text goes here
 `;
 
-test('embeds code snippet', async () => {
+test('Should replace netlify title tag with markdown equivalent one', async () => {
   const result = await run(markdown);
 
   expect(result).toMatchInlineSnapshot(`

@@ -7,7 +7,7 @@ export function removeTitleTagsPlugin() {
   return async function transformer(tree: any) {
     const promises: Promise<any>[] = [];
 
-    visit(tree, 'paragraph', (paragraph: any, _, parent: any) => {
+    visit(tree, 'header', (paragraph: any, _, parent: any) => {
       if (paragraph.children.length !== 1) {
         return;
       }
