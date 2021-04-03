@@ -1,7 +1,7 @@
 import '@jomaxx/jest-polly';
 import remark from 'remark';
 import plugin from './index';
-import {transformTitleTags} from "./removeTitleTags";
+// import {transformTitleTags} from "./removeTitleTags";
 
 const markdown = `
 ---
@@ -11,17 +11,17 @@ title: Introduction
 Random text goes here
 `;
 
-test('Should transform netlify text', async () => {
-  const sampleText = `
-    ---
-    title: Introduction
-    ---
-  `;
-
-  let expected = transformTitleTags(sampleText);
-
-  expect(expected).toMatchInlineSnapshot(`"#  Introduction"`);
-});
+// test('Should transform netlify text', async () => {
+//   const sampleText = `
+//     ---
+//     title: Introduction
+//     ---
+//   `;
+//
+//   let expected = transformTitleTags(sampleText);
+//
+//   expect(expected).toMatchInlineSnapshot(`"#  Introduction"`);
+// });
 
 test('Should replace netlify title tag with markdown equivalent one, using remark', async () => {
   const result = await run(markdown);

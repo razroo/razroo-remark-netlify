@@ -1,11 +1,11 @@
-export function matchNetlifyTitleTag(text: string): any {
-  const regex = /---\s*title.*\s*---/mi
+export function matchNetlifyTitleTag(text: any): any {
   console.log('text');
   console.log(text);
 
-  const match = text.match(regex);
-
-  return match;
+  // const regex = /---\s*title.*\s*---/mi;
+  // const match = text.children[0].value.match(regex);
+  // if (!match) return null;
+  return true;
 }
 
 export function transformTitleTags(titleText: string): any {
