@@ -7,11 +7,5 @@ export function matchNetlifyTitleTag(text: string): any {
 }
 
 export function transformTitleTag(netlifyTitleText: string): any {
-  console.log('netlifyTitleText');
-  console.log(netlifyTitleText);
-  const transformedText = netlifyTitleText.replace("title: ", "");
-  console.log('transformedText');
-  console.log(transformedText);
-
-  return transformedText
+  return netlifyTitleText.replace("title: ", "");
 }
