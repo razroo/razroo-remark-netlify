@@ -1,5 +1,5 @@
 import visit from 'unist-util-visit';
-import {matchNetlifyTitleTag} from "./removeTitleTags";
+import {matchNetlifyTitleTag, transformTitleTag} from "./removeTitleTags";
 
 export function removeTitleTagsPlugin() {
 
@@ -32,10 +32,10 @@ export function removeTitleTagsPlugin() {
 
         promises.push(
           (async () => {
-            const match = matchNetlifyTitleTag(heading);
+            const match = matchNetlifyTitleTag(textNode.value);
 
             if (match) {
-              textNode.value = '246';
+              textNode.value = transformTitleTag(textNode.value);
 
               // parent.children.splice(parent.children.indexOf(heading), 1, {
               //   type: 'heading',

@@ -29,7 +29,7 @@ test('Should replace netlify title tag with markdown equivalent one, using remar
   expect(result).toMatchInlineSnapshot(`
     "# Introduction
 
-    Random Text Goes Here
+    Random text goes here
     "
   `);
 });

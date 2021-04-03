@@ -1,17 +1,17 @@
-export function matchNetlifyTitleTag(text: any): any {
-  console.log('text');
-  console.log(text);
+export function matchNetlifyTitleTag(text: string): any {
+  const regex = /title./mi;
+  const match = text.match(regex);
+  if (!match) return null;
 
-  // const regex = /---\s*title.*\s*---/mi;
-  // const match = text.children[0].value.match(regex);
-  // if (!match) return null;
   return true;
 }
 
-export function transformTitleTags(titleText: string): any {
-  const arrayOfTitleText = titleText.match(/title:(.*)/);
+export function transformTitleTag(netlifyTitleText: string): any {
+  console.log('netlifyTitleText');
+  console.log(netlifyTitleText);
+  const transformedText = netlifyTitleText.replace("title: ", "");
+  console.log('transformedText');
+  console.log(transformedText);
 
-  if(arrayOfTitleText) {
-    return '# ' + arrayOfTitleText[1];
-  }
+  return transformedText
 }
