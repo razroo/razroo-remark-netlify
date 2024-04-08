@@ -1,5 +1,4 @@
-# remark-embedded-code-snippets
-
+# razroo-remark-netlify
 [Remark](https://remark.js.org/) plugin for [embedding code snippets from github permalinks](https://github.blog/2017-08-15-introducing-embedded-code-snippets/).
 
 ## Usage
