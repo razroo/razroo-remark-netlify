@@ -10,9 +10,6 @@
     "esm",
     "types"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/razroo"
-  },
   "scripts": {
     "lint": "web-scripts lint",
     "test": "web-scripts test --ci",
